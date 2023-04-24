@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/_common :: common_head(~{::title},~{},~{})">
+    <title>江苏崇恒医疗科技有限公司</title>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+
+    <!--[if lt IE 9]>
+    <style>
+        article, aside, dialog, footer, header, section, nav, figure, menu {
+            display: block;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('input, textarea').placeholder();
+        });
+    </script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('.indexci img').each(function () {
+                PIE.attach(this);
+            });
+        });
+    </script>
+    <![endif]-->
+</head>
+<body>
+<!--[if lt IE 8]>
+<div class="lt-ie8-bg">
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser.</p>
+    <p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">对不起，您正在使用的是 <strong>过时</strong> 的浏览器.</p>
+    <p>请升级您的浏览器（IE8+，或者是火狐、谷歌、Opera、Safari等现代浏览器），以改进您的用户体验！</p>
+</div>
+<style>
+    .lt-ie8-bg {
+        z-index: 11111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #333;
+        color: #999;
+        padding: 100px 20px;
+        text-align: center;
+        font-size: 26px
+    }
+
+    .lt-ie8-bg a {
+        color: #f5f5f5;
+        border-bottom: 2px solid #fff
+    }
+
+    .lt-ie8-bg a:hover {
+        text-decoration: none
+    }
+
+    #wrap {
+        display: none;
+    }
+</style>
+<![endif]-->
+<div id="wrap">
+    <!--<div id="preloader">
+      <div id="status">&nbsp;</div>
+      <div class="loader">
+        <h1>页面加载中...</h1>
+        <span></span> <span></span> <span></span> </div>
+    </div>-->
+    <th:block th:insert="common/_common::header"></th:block>
+    <!--time-table-sec-->
+    <div class="tp-banner-container" id="index-slider">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"
+                    data-title="s1"><img src="../../static/chmedt/s1.jpg" alt="banner1" data-bgposition="center top"
+                                         data-bgfit="cover" data-bgrepeat="no-repeat"></li>
+                <li data-transition="random" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"
+                    data-title="s2"><img src="../../static/chmedt/s1.jpg" alt="banner1" data-bgposition="center top"
+                                         data-bgfit="cover" data-bgrepeat="no-repeat"></li>
+            </ul>
+            <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+    <!--make-appointment-->
+    <div class="content">
+        <div class="services-one" id="index-whyus">
+            <div class="dr-quote" id="index-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12"><span class="quote">拥有好产品、好队伍、好策划的“医疗人”将继续以开拓进取的精神大步前进！</span> <span
+                                class="name"> <a href="about.html" style="color:white;">了解我们</a> </span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <th:block th:insert="common/_common::footer"></th:block>
+    </div>
+    <a href="#0" class="cd-top"></a>
+</div>
+<th:block th:insert="common/_common::script"></th:block>
+<script>
+    //<!-- Mobile Menu -->
+    $(document).ready(function () {
+        "use strict";
+        $("#menu").mmenu({
+            "classes": "mm-slide",
+            "offCanvas": {
+                "position": "right",
+                "zposition": "front" //back, front,next
+            },
+            "header": {
+                "title": "网站导航",
+                "add": true,
+                "update": true
+            },
+
+        });
+    });
+</script>
+</body>
+</html>

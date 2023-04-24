@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:fragment="common_head(title,links,scripts)">
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="robots" content="index, follow">
+    <title th:replace="${title}"></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!--    <link th:href="@{/favicon.ico}" rel="shortcut icon" />-->
+    <link th:href="@{../../../static/chmedt/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/medical-guide.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/dropmenu.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/style.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/settings.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/extralayers.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/jquery.mmenu.all.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/loader.css}" rel="stylesheet">
+    <link th:href="@{../../../static/chmedt/tk.css}" rel="stylesheet">
+    <th:block th:replace="${links}"/>
+    <script type="text/javascript" th:src="@{../../../static/chmedt/jquery-1.11.3.min.js}"></script>
+    <script type="text/javascript" th:src="@{../../../static/chmedt/owl.carousel.js}"></script>
+    <th:block th:replace="${scripts}"/>
+</head>
+<body>
+<!-- 静态资源引入 -->
+<th:block th:fragment="script">
+    <script type="text/javascript" th:src="@{../../../static/chmedt/scroll-desktop-smooth.js}"></script>
+    <script type="text/javascript" th:src="@{../../../static/chmedt/jquery.themepunch.revolution.min.js}"></script>
+    <script type="text/javascript" th:src="@{../../../static/chmedt/jquery.themepunch.tools.min.js}"></script>
+    <script type="text/javascript" th:src="@{../../../static/chmedt/classie.js}"></script>
+    <script type="text/javascript" th:src="@{../../../static/chmedt/jquery.mmenu.min.all.js}"></script>
+    <script type="text/javascript" th:src="@{../../../static/chmedt/custom.js}"></script>
+</th:block>
+<!--网页头部-->
+<div th:fragment="header">
+    <div id="header-1">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 topbar-left"><span class="adword">崇恒医疗致力于医疗器械类产品研发生产！</span></div>
+                    <div class="col-md-7 topbar-right">
+                        <div class="get-touch">
+                            <ul>
+                                <li class="top-phone"><a href="tel:13655516000"><i class="fa fa-phone"></i> 13655516000</a>
+                                </li>
+                                <li class="top-email"><a href="mailto:chmedt@163.com"><i class="fa fa-envelope"></i>
+                                    chmedt@163.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="nav-logo"><a href="../about.html" class="logo"><img src="../../../static/chmedt/logo.png" alt=""></a>
+                    </div>
+                    <div class="nav-menu" id="navigation">
+                        <nav class="menu-2">
+                            <ul class="nav wtf-menu">
+                                <li th:class="${#strings.startsWith(#httpServletRequest.getRequestURI(), '/index.html')} ? 'Lev1 parent item-select' : 'Lev1 parent'">
+                                    <a href="../index.html" class="menu1">网站首页</a>
+                                </li>
+                                <li th:class="${#strings.startsWith(#httpServletRequest.getRequestURI(), '/about.html')} ? 'Lev1 parent item-select' : 'Lev1 parent'">
+                                    <a href="../about.html" class="menu1">关于我们</a>
+                                </li>
+                                <li th:class="${#strings.startsWith(#httpServletRequest.getRequestURI(), '/product_view.html')} ? 'Lev1 parent item-select' : 'Lev1 parent'">
+                                    <a href="../product_view.html" class="menu1">产品介绍</a>
+                                </li>
+                                <li th:class="${#strings.startsWith(#httpServletRequest.getRequestURI(), '/news.html')} ? 'Lev1 parent item-select' : 'Lev1 parent'">
+                                    <a href="../news.html" class="menu1">新闻资讯</a>
+                                </li>
+                                <li th:class="${#strings.startsWith(#httpServletRequest.getRequestURI(), '/link.html')} ? 'Lev1 parent item-select' : 'Lev1 parent'">
+                                    <a href="../link.html" class="menu1">联系我们</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div id="page" class="mobile-nav">
+        <div class="container">
+            <div class="header"><a href="#menu"></a></div>
+            <nav id="menu">
+                <ul>
+                    <li class="Lev1"><a href="../index.html" class="menu1">网站首页</a></li>
+                    <li class="Lev1"><a href="../about.html" class="menu1">关于我们</a></li>
+                    <li class="Lev1"><a href="../product_view.html" class="menu1">产品介绍</a></li>
+                    <li class="Lev1"><a href="../news.html" class="menu1">新闻资讯</a></li>
+                    <li class="Lev1"><a href="../link.html" class="menu1">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!--网页尾部-->
+<div th:fragment="footer">
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="emergency"><span class="number">电话：0513-82102961</span> <img
+                            src="../../../static/chmedt/emergency-divider.png"></div>
+                </div>
+            </div>
+            <div class="main-footer">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6 mf-item foot-about">
+                        <div class="title dark-title">
+                            <h5><a href="../about.html">关于我们</a></h5>
+                        </div>
+                        <div class="detail f-about">
+                            江苏崇恒医疗科技有限公司成立于2020年5月，公司位于江苏省南通市海门市临江镇洞庭湖路100号B6栋2楼海门生物医药科技创业园B6栋二楼，专注于创新类医疗器械的研发、生产和技术服务。
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 mf-item foot-nav">
+                        <div class="useful-links">
+                            <div class="title">
+                                <h5>快捷链接</h5>
+                            </div>
+                            <div class="detail">
+                                <ul>
+                                    <li><a href="../index.html">网站首页</a></li>
+                                    <li><a href="../about.html">关于我们</a>&nbsp;&nbsp;<a
+                                            href="../product_view.html">产品介绍</a></li>
+                                    <li><a href="../news.html">新闻资讯</a>&nbsp;&nbsp;<a href="../link.html">联系我们</a></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 mf-item foot-contact">
+                        <div class="get-touch">
+                            <div class="title dark-title">
+                                <h5><a href="../link.html">联系我们</a></h5>
+                            </div>
+                            <div class="detail">
+                                <div class="get-touch">
+                                    <ul>
+                                        <li><i class="fa fa-map-marker"></i> <span>地址：江苏省南通市海门市临江镇洞庭湖路100号B6栋2楼</span>
+                                        </li>
+                                        <li><i class="fa fa-phone"></i>
+                                            <span>手机：宋先生 13655516000　　　汪先生 13855173097</span></li>
+                                        <li><i class="fa fa-envelope"></i> <span>邮箱：chmedt@163.com</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 copy-left"><span class="copyrights">网站备案/许可证号:苏ICP备2022041994号-1</span></div>
+                <div class="col-md-5 copy-left"><span class="copyrights">Copyright © 2020-2023 江苏崇恒医疗科技有限公司 版权所有</span>
+                </div>
+                <div class="col-md-3 copy-right">
+                    <div class="social-icons">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
