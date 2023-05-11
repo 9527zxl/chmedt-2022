@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chemdet.web.mapper.SysUserMapper">
+
+    <!-- 查询全部SysUser记录 -->
+    <select id="findAll" resultType="com.chemdet.web.pojo.SysUser">
+        SELECT *
+        FROM sys_user
+    </select>
+
+    <!-- 新增一条记录 -->
+    <insert id="insertSysUser" parameterType="com.chemdet.web.pojo.SysUser">
+        INSERT INTO sys_user (USER_TYPE, USER_NAME, REAL_NAME, PASSWORD, GENDER, BIRTHDATE, TITLE,
+                              MOBILE, OFFICE_TEL, EMAIL, LOGIN_COUNT, LAST_LOGIN_IP, LAST_LOGIN_TIME, ORDER_VALUE,
+                              DEPT_NO, REGION_ID, IS_DEL, IS_ACTIVE, USER_IMG)
+        VALUES (#{userType}, #{userName}, #{realName}, #{password}, #{gender}, #{birthdate},
+                #{title}, #{mobile}, #{officeTel}, #{email}, #{loginCount}, #{lastLoginIp},
+                #{lastLoginTime}, #{orderValue}, #{deptNo}, #{regionId}, #{isDel}, #{isActive},
+                #{userImg})
+    </insert>
+
+    <!-- 根据用户ID删除用户 -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM sys_user WHERE ID = #{id}
+    </delete>
+
+    <!-- 根据用户ID更新用户信息 -->
+    <update id="updateById" parameterType="com.chemdet.web.pojo.SysUser">
+        UPDATE sys_user
+        <set>
+            <if test="userType != null">USER_TYPE = #{userType},</if>
+            <if test="userName != null">USER_NAME = #{userName},</if>
+            <if test="realName != null">REAL_NAME = #{realName},</if>
+            <if test="password != null">PASSWORD = #{password},</if>
+            <if test="gender != null">GENDER = #{gender},</if>
+            <if test="birthdate != null">BIRTHDATE = #{birthdate},</if>
+            <if test="title != null">TITLE = #{title},</if>
+            <if test="mobile != null">MOBILE = #{mobile},</if>
+            <if test="officeTel != null">OFFICE_TEL = #{officeTel},</if>
+            <if test="email != null">EMAIL = #{email},</if>
+            <if test="deptNo != null">DEPT_NO = #{deptNo},</if>
+            <if test="regionId != null">REGION_ID = #{regionId},</if>
+            <if test="isActive != null">IS_ACTIVE = #{isActive},</if>
+            <if test="userImg != null">USER_IMG = #{userImg},</if>
+        </set>
+        WHERE ID = #{id}
+    </update>
+
+</mapper>
